@@ -28,6 +28,38 @@ public class TestClienteEmpresa {
         assertEquals("Test",ce.getNome());
     }    
     
-   
+   @Test
+   public void testCpf(){
+        Integer codigo=1;
+        Empresa empresa=new Empresa(1, "Teste");
+        long cpf=1234567891;
+        String nome="Test";
+        long telefone=12345678;
+        
+        ClienteEmpresa ce = new ClienteEmpresa(codigo, empresa, cpf, nome, telefone);
+        assertEquals(new Long(1234567891),new Long(ce.getCpf()));
+   }
+   @Test
+   public void testNome(){
+        Integer codigo=1;
+        Empresa empresa=new Empresa(1, "Teste");
+        long cpf=1234567891;
+        String nome="Test";
+        long telefone=12345678;
+        
+        ClienteEmpresa ce = new ClienteEmpresa(codigo, empresa, cpf, nome, telefone);
+        assertEquals("Test",ce.getNome());
+   }
+   @Test
+   public void testTelefone(){
+        Integer codigo=1;
+        Empresa empresa=new Empresa(1, "Teste");
+        long cpf=1234567891;
+        String nome="Test";
+        long telefone=12345678;
+        
+        ClienteEmpresa ce = new ClienteEmpresa(codigo, empresa, cpf, nome, telefone);
+        assertEquals(new Long(12345678),new Long(ce.getTelefone()));
+   }
     
 }
