@@ -5,6 +5,8 @@
  */
 package com.br.es2.core.entidades;
 
+import entidade.ClienteEmpresa;
+import entidade.Empresa;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -14,7 +16,18 @@ import static org.junit.Assert.*;
  */
 public class TestClienteEmpresa {
     
-    public TestClienteEmpresa() {
-    }
+   @Test
+    public void testName(){
+        Integer codigo=1;
+        Empresa empresa=new Empresa(1, "Teste");
+        long cpf=1234567891;
+        String nome="Test";
+        long telefone=12345678;
+        
+        ClienteEmpresa ce = new ClienteEmpresa(codigo, empresa, cpf, nome, telefone);
+        assertEquals("Test",ce.getNome());
+    }    
+    
+   
     
 }
