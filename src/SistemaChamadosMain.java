@@ -1,4 +1,5 @@
-import Persistencia.ClienteDAO;
+import Persistencia.ChamadoDAO;
+import Persistencia.TecnicoDAO;
 import controle.ControladorPrincipal;
 
 public class SistemaChamadosMain {
@@ -7,8 +8,10 @@ public class SistemaChamadosMain {
 		
 		new ControladorPrincipal().start();
                 
-                ClienteDAO c = new ClienteDAO();
-                System.out.println(c.gerarCodigo());
+                TecnicoDAO t = new TecnicoDAO();
+                System.out.println(t.gerarCodigo());
+                
+                
 	}
 	
 }
