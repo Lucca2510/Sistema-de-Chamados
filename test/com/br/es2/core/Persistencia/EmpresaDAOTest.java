@@ -16,13 +16,13 @@ import org.junit.Test;
 public class EmpresaDAOTest {
     
     @Test
-    public void voltaEmpresaTest(){
+    public void voltaEmpresaTestNotNull(){
         EmpresaDAO e = new EmpresaDAO();
         assertNotNull(e.voltaEmpresa());
     }
     
     @Test
-    public void getEmpresasTest(){
+    public void getEmpresasTestNotNull(){
         EmpresaDAO e = new EmpresaDAO();
         assertNotNull(e.getEmpresas());
     }

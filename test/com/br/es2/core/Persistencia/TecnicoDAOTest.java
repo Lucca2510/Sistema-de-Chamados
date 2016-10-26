@@ -6,8 +6,10 @@
 package com.br.es2.core.Persistencia;
 
 import Persistencia.TecnicoDAO;
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 /**
@@ -17,17 +19,34 @@ import org.junit.Test;
 public class TecnicoDAOTest {
     
     @Test
-    public void gerarCodigoTest(){
+    public void gerarCodigoTestGreaterZero(){
         TecnicoDAO t = new TecnicoDAO();
-        assertEquals(t.gerarCodigo(),1);
+        assertTrue(t.gerarCodigo()>0);
     }
     
     @Test
-    public void voltaCashTecnicoTest(){
+    public void gerarCodigoTestNegative(){
+        TecnicoDAO t = new TecnicoDAO();
+        assertFalse(t.gerarCodigo()<0);
+    }
+    
+    @Test
+    public void gerarCodigoTestWithZero(){
+        TecnicoDAO t = new TecnicoDAO();
+        assertFalse(t.gerarCodigo()==0);
+    }
+    
+    @Test
+    public void voltaCashTecnicoTestNotNull(){
         TecnicoDAO t = new TecnicoDAO();
         assertNotNull(t.voltaCashTecnico());
     }
     
+    @Test
+    public void getTestNotNull(){
+        TecnicoDAO t = new TecnicoDAO();
+        assertNull(t.get(-1));
+    }
     
     
 }

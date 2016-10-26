@@ -17,24 +17,39 @@ import static org.junit.Assert.*;
 public class ClienteDAOTest {
     
     @Test
-    public void gerarCodigoTest(){
+    public void gerarCodigoTestGreaterZero(){
         ClienteDAO c = new ClienteDAO();
-        assertEquals(c.gerarCodigo(),1);
+        assertTrue(c.gerarCodigo()>0);
     }
     
     @Test
-    public void validarCPFTest(){
-        ClienteEmpresa cliente = new ClienteEmpresa(Integer.SIZE, null, 405392761, null, 30031987);
+    public void gerarCodigoTestNegative(){
+        ClienteDAO c = new ClienteDAO();
+        assertFalse(c.gerarCodigo()<0);
+    }
+    
+    @Test
+    public void validarCPFTestWithZero(){
+        ClienteEmpresa cliente = new ClienteEmpresa(Integer.SIZE, null, 0, null, 30031987);
         ClienteDAO c = new ClienteDAO();
         
-        assertTrue(c.validarCPF(cliente.getCpf()));
+        assertFalse(c.validarCPF(cliente.getCpf()));
+    }
+    @Test
+    public void validarCPFTestWithNegative(){
+        ClienteEmpresa cliente = new ClienteEmpresa(Integer.SIZE, null, -5, null, 30031987);
+        ClienteDAO c = new ClienteDAO();
+        
+        assertFalse(c.validarCPF(cliente.getCpf()));
     }
     
     @Test
-    public void voltaCashClienteTest(){
+    public void voltaCashClienteTestNotNull(){
         ClienteDAO c = new ClienteDAO();
         assertNotNull(c.voltaCashCliente());
     }
+    
+   
     
     
 }

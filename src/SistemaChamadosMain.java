@@ -1,15 +1,13 @@
 import Persistencia.ChamadoDAO;
-import Persistencia.TecnicoDAO;
-import controle.ControladorPrincipal;
 
 public class SistemaChamadosMain {
 	
 	public static void main(String[] args){
 		
-		new ControladorPrincipal().start();
+		ChamadoDAO c = new ChamadoDAO();
                 
-                TecnicoDAO t = new TecnicoDAO();
-                System.out.println(t.gerarCodigo());
+                System.out.println(c.getChamados());
+                
                 
                 
 	}
