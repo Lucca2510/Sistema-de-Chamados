@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.br.es2.controler;
+package com.br.es2.core.controler;
 
+import controle.ControladorPrincipal;
 import controle.ControleTecnicos;
 import entidade.Tecnico;
 import org.junit.Test;
@@ -18,14 +19,16 @@ public class TestControleTecnicos {
     
     @Test
     public void testInserir(){
-        ControleTecnicos ct = new ControleTecnicos();
+        ControladorPrincipal cp = new ControladorPrincipal();        
+        ControleTecnicos ct = cp.getCtrTecnicos();
         Tecnico t1 = ct.inserir(12345678, "João");
         assertEquals("João",t1.getNome());
     }
     
     @Test
     public void testInserir2(){
-        ControleTecnicos ct = new ControleTecnicos();
+        ControladorPrincipal cp = new ControladorPrincipal();        
+        ControleTecnicos ct = cp.getCtrTecnicos();
         Tecnico t1 = ct.inserir(12345678, "João");
         assertEquals(new Long(12345678),new Long(t1.getTelefone()));
     }
